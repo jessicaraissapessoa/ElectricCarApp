@@ -125,18 +125,78 @@
         app:layout_constraintStart_toEndOf="@id/tv_recarga"
         app:layout_constraintTop_toTopOf="@id/tv_recarga" />
 
+
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_preco_kwh"
+        android:layout_width="0dp"
+        android:layout_margin="16dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
-        android:hint="Name"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="320dp"
+        android:hint="@string/preco_kwh"
+        android:inputType="number"
+        android:maxLength="10"
         app:layout_constraintTop_toBottomOf="@id/tv_recarga_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/et_km_percorrido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:maxLength="10"
+        android:inputType="number"
+        android:hint="@string/km_percorrido"
+        app:layout_constraintTop_toBottomOf="@id/et_preco_kwh"
+        app:layout_constraintStart_toStartOf="@id/et_preco_kwh"
+        app:layout_constraintEnd_toEndOf="@id/et_preco_kwh"/>
+
+
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/calcular"
+        app:layout_constraintTop_toBottomOf="@id/et_km_percorrido"
+        app:layout_constraintStart_toStartOf="@id/et_km_percorrido"
+        app:layout_constraintEnd_toEndOf="@id/et_km_percorrido"/>
+
+    <TextView
+        android:id="@+id/tv_selecione_comida_favorita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecione a comida favorita:"
+        app:layout_constraintTop_toBottomOf="@id/btn_calcular"
+        app:layout_constraintStart_toStartOf="@id/btn_calcular"/>
+
+    <RadioGroup
+        android:id="@+id/rg_comida_favorita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/tv_selecione_comida_favorita"
+        app:layout_constraintTop_toBottomOf="@+id/tv_selecione_comida_favorita">
+
+        <RadioButton
+            android:id="@+id/rb_pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza"/>
+
+        <RadioButton
+            android:id="@+id/rb_hamburguer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hamburguer"/>
+
+    </RadioGroup>
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
