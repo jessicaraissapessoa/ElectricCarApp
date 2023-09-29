@@ -10,4 +10,12 @@
     <string name="preco_kwh">Preço Kwh</string>
     <string name="km_percorrido">Km percorrido</string>
     <string name="calcular">Calcular</string>
+
+    <string-array name="array_cidades">
+        <item>Araraquara</item>
+        <item>Taquaringa</item>
+        <item>São Paulo</item>
+        <item>Salvador</item>
+    </string-array>
+
 </resources>

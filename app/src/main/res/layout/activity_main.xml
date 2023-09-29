@@ -41,6 +41,7 @@
 
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/iv_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -215,6 +216,15 @@
         android:text="Ligar lâmpada"
         app:layout_constraintTop_toBottomOf="@id/cb_compromisso_2"
         app:layout_constraintStart_toStartOf="@id/cb_compromisso_2"/>
+
+    <Spinner
+        android:id="@+id/sp_cidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:entries="@array/array_cidades"
+        app:layout_constraintTop_toBottomOf="@id/s_lampada"
+        app:layout_constraintStart_toStartOf="@id/s_lampada" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
