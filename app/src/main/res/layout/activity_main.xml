@@ -134,7 +134,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/preco_kwh"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:maxLength="10"
         app:layout_constraintTop_toBottomOf="@id/tv_recarga_value"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:maxLength="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:hint="@string/km_percorrido"
         app:layout_constraintTop_toBottomOf="@id/et_preco_kwh"
         app:layout_constraintStart_toStartOf="@id/et_preco_kwh"
@@ -163,7 +163,17 @@
         app:layout_constraintStart_toStartOf="@id/et_km_percorrido"
         app:layout_constraintEnd_toEndOf="@id/et_km_percorrido"/>
 
+
     <TextView
+        android:id="@+id/tv_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/btn_calcular"
+        app:layout_constraintTop_toBottomOf="@id/btn_calcular"/>
+
+
+    <TextView
+        android:visibility="gone"
         android:id="@+id/tv_selecione_comida_favorita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
