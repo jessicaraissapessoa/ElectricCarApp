@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.eletriccarapp.R
+import br.com.jessicaraissapessoa.eletriccarapp.presentation.adapter.CarAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,9 +31,10 @@ class MainActivity : AppCompatActivity() {
         var dados = arrayOf(
             "Cupcake", "Donut", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich", "Jelly Bean"
         )
-        //val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dados)
-        //lista.adapter = adapter
+        val adapter = CarAdapter(dados)
 
+        //listaCarros.layoutManager = LinearLayoutManager(this) aplicamos no recyclerView em activity_main.xml
+        listaCarros.adapter = adapter
     }
 
     fun setupListeners() {
