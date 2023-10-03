@@ -28,27 +28,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("Lifecycle", "RESUME")
+        Log.d("LifeCycle", "RESUME")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("Lifecycle", "START")
+        Log.d("LifeCycle", "START")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("Lifecycle", "PAUSE")
+        Log.d("LifeCycle", "PAUSE")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("Lifecycle", "STOP")
+        Log.d("LifeCycle", "STOP")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Lifecycle", "DESTROY")
+        Log.d("LifeCycle", "DESTROY")
     }
 
     fun setupView() {
