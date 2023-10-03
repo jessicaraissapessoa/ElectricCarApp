@@ -5,3 +5,17 @@ P
 Wapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/presentation/MainActivity.kt,8\5\8591f6b52eccd31b2dfecd3bdf950dd1306a742b
 î
 dapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/presentation/CalcularAutonomiaActivity.kt,2\a\2aa5d7e81d06739e2bcc2a70e5a9a5bad8d0df66
+Å
+Q.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,1\f\1fe398aa86b382486ed27d0a69bf92f68bd5edaa
+Å
+Q.idea/sonarlint/securityhotspotstore/2/a/2aa5d7e81d06739e2bcc2a70e5a9a5bad8d0df66,f\d\fd9eea2921fe18ec622bd9360cb61c7b4538e246
+w
+G.idea/sonarlint/issuestore/2/a/2aa5d7e81d06739e2bcc2a70e5a9a5bad8d0df66,1\f\1f64572dbb88f1afc6a234ce5cc484528b77ade1
+Å
+Q.idea/sonarlint/securityhotspotstore/8/5/8591f6b52eccd31b2dfecd3bdf950dd1306a742b,e\e\ee126546ce98b935d51d8845a53aabd69f118a8b
+w
+G.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,3\2\32813322c99a6c8a141ab2dc12bc10af3425f1b4
+w
+G.idea/sonarlint/issuestore/8/5/8591f6b52eccd31b2dfecd3bdf950dd1306a742b,2\f\2f77099df6368d7c27692431d13fc04ece1f9651
+ç
+]app/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/presentation/adapter/CarAdapter.kt,a\6\a6c7777b67fc0df9190af0f30dcd20b6398652fc
