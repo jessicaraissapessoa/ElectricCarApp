@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.presentation
+package br.com.jessicaraissapessoa.eletriccarapp.ui
 
 import android.os.Bundle
 import android.util.Log
