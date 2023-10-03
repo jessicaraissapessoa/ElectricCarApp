@@ -2,6 +2,7 @@ package br.com.jessicaraissapessoa.eletriccarapp.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -16,11 +17,38 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("Lifecycle", "CREATE")
+
         setContentView(R.layout.activity_main)
 
         setupView()
         setupListeners()
         setupList()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Lifecycle", "RESUME")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Lifecycle", "START")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Lifecycle", "PAUSE")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Lifecycle", "STOP")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Lifecycle", "DESTROY")
     }
 
     fun setupView() {

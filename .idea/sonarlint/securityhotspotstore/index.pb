@@ -1,10 +1,6 @@
 
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-á
-Wapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/presentation/MainActivity.kt,8\5\8591f6b52eccd31b2dfecd3bdf950dd1306a742b
-î
-dapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/presentation/CalcularAutonomiaActivity.kt,2\a\2aa5d7e81d06739e2bcc2a70e5a9a5bad8d0df66
 Å
 Q.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,1\f\1fe398aa86b382486ed27d0a69bf92f68bd5edaa
 Å
@@ -17,5 +13,13 @@ w
 G.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,3\2\32813322c99a6c8a141ab2dc12bc10af3425f1b4
 w
 G.idea/sonarlint/issuestore/8/5/8591f6b52eccd31b2dfecd3bdf950dd1306a742b,2\f\2f77099df6368d7c27692431d13fc04ece1f9651
-ç
-]app/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/presentation/adapter/CarAdapter.kt,a\6\a6c7777b67fc0df9190af0f30dcd20b6398652fc
+z
+Japp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/domain/Carro.kt,e\8\e8428eafe07143cc67a916f19158051f5e0bfac2
+}
+Mapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/ui/MainActivity.kt,2\a\2a96f341a40c14072534b19b263a3a74dd86b689
+ä
+Zapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/ui/CalcularAutonomiaActivity.kt,e\1\e1a97f91727112b1c039c1baefd420cc30202fd3
+É
+Sapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/ui/adapter/CarAdapter.kt,4\c\4ceac73af10be9e2ff16dec9acb842851438a791
+}
+Mapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/CarFactory.kt,1\1\11bf996166b1a80269a95f25bfc5bdce1cd005ba
