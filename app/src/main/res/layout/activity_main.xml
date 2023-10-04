@@ -7,6 +7,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carros"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/favoritos"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
     <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
@@ -16,29 +37,6 @@
         android:text="@string/title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_carros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/carros"
-        android:layout_margin="16dp"
-        style="@style/TextAppearance.AppCompat.Body2"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_titulo"/>
-
-    <TextView
-        android:id="@+id/tv_favoritos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/favoritos"
-        android:layout_marginStart="16dp"
-        style="@style/TextAppearance.AppCompat.Body2"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/tv_carros"
-        app:layout_constraintTop_toTopOf="@id/tv_carros"/>
-
 
 
     <Button
@@ -56,7 +54,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/tv_carros"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btn_calcular"
