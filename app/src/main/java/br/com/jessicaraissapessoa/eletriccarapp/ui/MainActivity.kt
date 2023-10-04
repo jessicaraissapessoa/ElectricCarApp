@@ -1,22 +1,15 @@
 package br.com.jessicaraissapessoa.eletriccarapp.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import br.com.jessicaraissapessoa.eletriccarapp.R
-import br.com.jessicaraissapessoa.eletriccarapp.data.CarFactory
-import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.CarAdapter
 import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.TabAdapter
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var btnCalcular : Button
-    lateinit var listaCarros : RecyclerView
     lateinit var tabLayout : TabLayout
     lateinit var viewPager : ViewPager2
 
@@ -27,15 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupView()
-        setupListeners()
-        setupList()
         setupTabs()
     }
 
     fun setupView() {
         tabLayout = findViewById(R.id.tab_layout)
-        btnCalcular = findViewById(R.id.btn_calcular)
-        listaCarros = findViewById(R.id.rv_lista_carros)
         viewPager = findViewById(R.id.vp_view_pager)
     }
 
@@ -59,20 +48,14 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
-    }
-
-    fun setupList() {
-
-        //listaCarros.layoutManager = LinearLayoutManager(this) aplicamos no recyclerView em activity_main.xml
-
-        val adapter = CarAdapter(CarFactory.list) //Acesso direto à CarFactory por ser object
-        listaCarros.adapter = adapter
-    }
-
-    fun setupListeners() {
-        btnCalcular.setOnClickListener {
-            startActivity(Intent(this, CalcularAutonomiaActivity::class.java))
-        }
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                //Sobrescrita do método onPageSelected() garantindo que quando for para uma tab, a tab respectiva fique selecionada
+                //Faz funcionar corretamente transição entre fragments com scroll esquerda-direita
+                super.onPageSelected(position)
+                tabLayout.getTabAt(position)?.select()
+            }
+        })
     }
 
     //LOGS:
