@@ -10,13 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.eletriccarapp.R
 import br.com.jessicaraissapessoa.eletriccarapp.data.CarFactory
+import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONTokener
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -116,31 +114,22 @@ class CarFragment : Fragment() {
 
                     val urlPhoto = jsonArray.getJSONObject(i).getString("urlPhoto")
                     Log.d("urlPhoto ->", urlPhoto)
+
+                    val model = Carro(
+                        id = id.toInt(),
+                        preco = preco,
+                        bateria = bateria,
+                        potencia = potencia,
+                        recarga = recarga,
+                        urlPhoto = urlPhoto
+                    )
+                    Log.d("Model ->", model.toString())
                 }
 
             } catch (ex: Exception) {
-
+                Log.e("Erro ->", ex.message.toString())
             }
         }
-
-//        fun streamToString(inputStream: InputStream) : String {
-//
-//            val bufferReader = BufferedReader(InputStreamReader(inputStream))
-//            var line : String
-//            var result = ""
-//
-//            try {
-//                do {
-//                    line = bufferReader.readLine()
-//                    line?.let {
-//                        result += line
-//                    }
-//                } while (line != null)
-//            } catch (ex: Exception) {
-//                Log.e("Erro", "Erro ao parcelar Stream")
-//            }
-//            return result
-//        }
 
     }
 }
