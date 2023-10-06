@@ -1,5 +1,6 @@
 package br.com.jessicaraissapessoa.eletriccarapp.ui
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +10,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.eletriccarapp.R
-import br.com.jessicaraissapessoa.eletriccarapp.data.CarFactory
 import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,6 +23,8 @@ class CarFragment : Fragment() {
     lateinit var fabCalcular : FloatingActionButton
     lateinit var listaCarros : RecyclerView
 
+    var carrosArray : ArrayList<Carro> = ArrayList()
+
     override fun onCreateView( //Esse onCreateView é onde vai nos dar a possibilidade de retornar um layout que a gente precisa
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,8 +35,8 @@ class CarFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        callService()
         setupView(view)
-        setupList()
         setupListeners()
     }
 
@@ -46,18 +48,19 @@ class CarFragment : Fragment() {
     }
 
     fun setupList() {
-
-        //listaCarros.layoutManager = LinearLayoutManager(this) aplicamos no recyclerView em activity_main.xml
-
-        val adapter = CarAdapter(CarFactory.list) //Acesso direto à CarFactory por ser object
+        val adapter = CarAdapter(carrosArray)
         listaCarros.adapter = adapter
     }
 
     fun setupListeners() {
         fabCalcular.setOnClickListener {
-            MyTask().execute("https://igorbag.github.io/cars-api/cars.json")
-            //startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
+            startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
         }
+    }
+
+    fun callService() {
+        val urlBase = "https://igorbag.github.io/cars-api/cars.json"
+        MyTask().execute(urlBase)
     }
 
     inner class MyTask : AsyncTask<String, String, String>() {
@@ -96,17 +99,19 @@ class CarFragment : Fragment() {
             try {
                 val jsonArray = JSONTokener(values[0]).nextValue() as JSONArray
 
+                Log.d("Resposta JSON", values[0]!!)
+
                 for (i in 0 until jsonArray.length()) {
                     val id = jsonArray.getJSONObject(i).getString("id")
                     Log.d("ID ->", id)
 
-                    val preco = jsonArray.getJSONObject(i).getString("preço")
+                    val preco = jsonArray.getJSONObject(i).getString("preco")
                     Log.d("preço ->", preco)
 
                     val bateria = jsonArray.getJSONObject(i).getString("bateria")
                     Log.d("bateria ->", bateria)
 
-                    val potencia = jsonArray.getJSONObject(i).getString("potência")
+                    val potencia = jsonArray.getJSONObject(i).getString("potencia")
                     Log.d("potência ->", potencia)
 
                     val recarga = jsonArray.getJSONObject(i).getString("recarga")
@@ -123,8 +128,12 @@ class CarFragment : Fragment() {
                         recarga = recarga,
                         urlPhoto = urlPhoto
                     )
+
+                    carrosArray.add(model)
                     Log.d("Model ->", model.toString())
                 }
+
+                setupList()
 
             } catch (ex: Exception) {
                 Log.e("Erro ->", ex.message.toString())
