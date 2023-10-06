@@ -81,10 +81,20 @@ class CarFragment : Fragment() {
                 urlConnection = urlBase.openConnection() as HttpURLConnection //abrindo conexão com a internet
                 urlConnection.connectTimeout = 60000 //para saber quanto tempo (milisegundos) que vai demorar e vamos respeitar
                 urlConnection.readTimeout = 60000 //definição do tempo de leitura com readTimeout
+                urlConnection.setRequestProperty( //Nosso endpoint só aceita esse tipo de informação
+                    "Accept",
+                    "application/json"
+                )
 
-                var response = urlConnection.inputStream.bufferedReader().use { it.readText() } //stream dos dados que são trafegados pela internet
+                val responseCode = urlConnection.responseCode
 
-                publishProgress(response) //Publica progresso para nosso método do background
+                if (responseCode == HttpURLConnection.HTTP_OK) { //Fe for ok faz sentido eu pegar esse responde e publicar
+                    var response = urlConnection.inputStream.bufferedReader().use { it.readText() } //stream dos dados que são trafegados pela internet
+
+                    publishProgress(response) //Publica progresso para nosso método do background
+                } else {
+                    Log.e("Erro", "Serviço indisponível no momento...")
+                }
 
             } catch (ex: Exception) {
                 Log.e("Erro", "Erro ao ralizar processamento...")
