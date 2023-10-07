@@ -1,7 +1,11 @@
 package br.com.jessicaraissapessoa.eletriccarapp.ui
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.AsyncTask
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -39,6 +43,10 @@ class CarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView(view)
         setupListeners()
+
+        val checkInternet = checkForInternet(context)
+        Log.d("Internet Connection ", checkInternet.toString())
+
         callService()
     }
 
@@ -67,6 +75,29 @@ class CarFragment : Fragment() {
     fun callService() {
         val urlBase = "https://igorbag.github.io/cars-api/cars.json"
         MyTask().execute(urlBase)
+    }
+
+    fun checkForInternet(context: Context?) : Boolean {
+
+        //Pegando dentro do sistema operacional Android o serviço de conectividade
+        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        //Tratativas:
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { //Se for Android M tem um comportamento
+            val network = connectivityManager.activeNetwork?: return false //Pegando se tem internet ativa
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network)?: return false //Vendo se ela tem capacidade de conexão
+
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                else -> false
+            }
+        } else {
+            @Suppress("DEPRECATION")
+            val networkInfo = connectivityManager.activeNetworkInfo?: return false
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnected
+        }
     }
 
     inner class MyTask : AsyncTask<String, String, String>() {
