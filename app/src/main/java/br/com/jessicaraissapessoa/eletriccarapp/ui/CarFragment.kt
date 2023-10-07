@@ -11,7 +11,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.eletriccarapp.R
@@ -28,6 +31,8 @@ class CarFragment : Fragment() {
     lateinit var fabCalcular : FloatingActionButton
     lateinit var listaCarros : RecyclerView
     lateinit var progress : ProgressBar
+    lateinit var noInternetImage : ImageView
+    lateinit var noInternetText : TextView
 
     var carrosArray : ArrayList<Carro> = ArrayList()
 
@@ -43,11 +48,22 @@ class CarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView(view)
         setupListeners()
+    }
 
-        val checkInternet = checkForInternet(context)
-        Log.d("Internet Connection ", checkInternet.toString())
+    override fun onResume() {
+        super.onResume()
+        if (checkForInternet(context)) { //Se tem internet, chama o serviço
+            callService()
+        } else { //Se não tiver internet, ocultamos informações e exibir o aviso de falta de conexão
+            emptyState()
+        }
+    }
 
-        callService()
+    fun emptyState() {
+        progress.isVisible = false
+        listaCarros.isVisible = false
+        noInternetImage.isVisible = true
+        noInternetText.isVisible = true
     }
 
     fun setupView(view: View) {
@@ -55,13 +71,15 @@ class CarFragment : Fragment() {
             fabCalcular = findViewById(R.id.fab_calcular)
             listaCarros = findViewById(R.id.rv_lista_carros)
             progress = findViewById(R.id.pb_loader)
+            noInternetImage = findViewById(R.id.iv_empty_state)
+            noInternetText = findViewById(R.id.tv_no_wifi)
         }
     }
 
     fun setupList() {
         val carroAdapter = CarAdapter(carrosArray)
         listaCarros.apply {
-            visibility = View.VISIBLE
+            isVisible = true
             adapter = carroAdapter
         }
     }
@@ -74,6 +92,7 @@ class CarFragment : Fragment() {
 
     fun callService() {
         val urlBase = "https://igorbag.github.io/cars-api/cars.json"
+        progress.isVisible = true
         MyTask().execute(urlBase)
     }
 
@@ -106,7 +125,6 @@ class CarFragment : Fragment() {
             //Executado antes de rodar
             super.onPreExecute()
             Log.d("MyTask", "Iniciando...")
-            progress.visibility = View.VISIBLE
         }
 
         override fun doInBackground(vararg url: String?): String { //É quem faz as coisas executarem por debaixo dos panos
@@ -181,7 +199,9 @@ class CarFragment : Fragment() {
                     Log.d("Model ->", model.toString())
                 }
 
-                progress.visibility = View.GONE
+                progress.isVisible = false
+                noInternetImage.isVisible = false
+                noInternetText.isVisible = false
 
                 setupList()
 

@@ -11,6 +11,7 @@
     <string name="km_percorrido">Km percorrido</string>
     <string name="calcular">Calcular</string>
     <string name="calcular_autonomia">Calcular Autonomia</string>
+    <string name="no_wifi">Ops, internet não disponível ):</string>
 
     <string-array name="array_cidades">
         <item>Araraquara</item>
