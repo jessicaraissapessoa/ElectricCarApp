@@ -163,7 +163,7 @@ class CarFragment : Fragment() {
         }
     }
 
-    //Utilizar o retrofit como absttração do AsyncTask!
+    //Utilizar o retrofit como abstração do AsyncTask!
     inner class MyTask : AsyncTask<String, String, String>() {
 
         override fun onPreExecute() {
