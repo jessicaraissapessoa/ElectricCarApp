@@ -175,3 +175,9 @@ G.idea/sonarlint/issuestore/1/1/11ecd9e83eb7194c4c5d02ece651390796442f55,7\b\7b
 Q.idea/sonarlint/securityhotspotstore/6/c/6c559793b8206a1ecf2c05da4625863f641d4c0d,b\4\b496f92a9ccdc438539e2b92a865d789266a450c
 D
 app/build.gradle.kts,d\2\d2a4383452aad84a18429a5844d31330a012a9e6
+z
+Japp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/CarsApi.kt,5\f\5f3f8733dc0a69134dd28f955bae44046512f527
+…
+Uapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/local/CarsDbHelper.kt,2\8\2843d152beedc0080c8ded75fe03c908764f0909
+‡
+Wapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/local/CarrosContract.kt,6\2\6213206ab29033d37b9666b4894a27dcfe5d8cb0
