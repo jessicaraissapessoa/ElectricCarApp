@@ -1,5 +1,6 @@
 package br.com.jessicaraissapessoa.eletriccarapp.ui
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -20,6 +21,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.eletriccarapp.R
 import br.com.jessicaraissapessoa.eletriccarapp.data.CarsApi
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_BATERIA
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_POTENCIA
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_PRECO
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_RACARGA
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_URL_PHOTO
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.TABLE_NAME
+import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarsDbHelper
 import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -256,5 +264,22 @@ class CarFragment : Fragment() {
             }
         }
 
+    }
+
+    fun saveOnDataBase(carro: Carro) {
+
+         val dbHelper = CarsDbHelper(requireContext()) //Instanciando e pegando o contexto
+        val db = dbHelper.writableDatabase //Abrindo uma forma de escrever no banco de dados
+
+        //Dados que vão popular o carro que vai ser passado para esse método (saveOnDataBase)
+        val values = ContentValues().apply {
+            put(COLLUMN_NAME_PRECO, carro.preco)
+            put(COLLUMN_NAME_BATERIA, carro.bateria)
+            put(COLLUMN_NAME_POTENCIA, carro.potencia)
+            put(COLLUMN_NAME_RACARGA, carro.recarga)
+            put(COLLUMN_NAME_URL_PHOTO, carro.urlPhoto)
+        }
+
+        val newRegister = db?.insert(TABLE_NAME, null, values) //Salvando informações
     }
 }
