@@ -181,3 +181,5 @@ Japp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/CarsApi.kt,5\f
 Wapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/local/CarrosContract.kt,6\2\6213206ab29033d37b9666b4894a27dcfe5d8cb0
 …
 Uapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/local/CarsDbHelper.kt,2\8\2843d152beedc0080c8ded75fe03c908764f0909
+†
+Vapp/src/main/java/br/com/jessicaraissapessoa/eletriccarapp/data/local/CarRepository.kt,a\6\a6a04b389055217c4b071077da95ec47832fe613
