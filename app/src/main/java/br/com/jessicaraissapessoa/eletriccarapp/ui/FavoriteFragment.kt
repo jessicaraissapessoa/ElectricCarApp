@@ -55,10 +55,8 @@ class FavoriteFragment : Fragment() {
             adapter = carroAdapter
         }
         carroAdapter.carItemLister = {carro ->
-            //val isSaved = CarRepository(requireContext()).saveIfNotExist(carro)
+            val deletar = CarRepository(requireContext()).delete(carro)
         }
     }
-
-
 
 }

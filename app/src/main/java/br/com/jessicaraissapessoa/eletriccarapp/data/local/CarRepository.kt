@@ -47,6 +47,29 @@ class CarRepository (private val context: Context) {
         return isSaved
     }
 
+    fun delete(carro: Carro) : Boolean {
+
+        var isSaved = true
+
+        val dbHelper = CarsDbHelper(context) //Instanciando e pegando o contexto
+        val db = dbHelper.writableDatabase //Abrindo uma forma de escrever no banco de dados
+
+        val filter = "$COLLUMN_NAME_CAR_ID = ?" //Filtro por ID / Quantidade de parâmetros -> ? (Informaremos depois)
+        val filterValues = arrayOf(carro.id.toString())
+
+        val deletado = db.delete(
+            CarrosContract.CarEntry.TABLE_NAME,
+            filter,
+            filterValues
+        )
+
+        if (deletado > 0) {
+            isSaved = false
+        }
+
+        return isSaved
+    }
+
     fun findCarById(id : Int) : Carro {
         val dbHelper = CarsDbHelper(context) //Instanciando e pegando o contexto
         val db = dbHelper.readableDatabase
