@@ -6,6 +6,7 @@ object CarrosContract {
 
     object CarEntry : BaseColumns {
         const val TABLE_NAME = "car"
+        const val COLLUMN_NAME_CAR_ID = "car_id"
         const val COLLUMN_NAME_PRECO = "preco"
         const val COLLUMN_NAME_BATERIA = "bateria"
         const val COLLUMN_NAME_POTENCIA = "potencia"
@@ -17,6 +18,7 @@ object CarrosContract {
     const val TABLE_CAR =
         "CREATE TABLE ${CarEntry.TABLE_NAME} (" +
                 "${BaseColumns._ID} INTEGER PRIMARY KEY," +
+                "${CarEntry.COLLUMN_NAME_CAR_ID} TEXT," +
                 "${CarEntry.COLLUMN_NAME_PRECO} TEXT," +
                 "${CarEntry.COLLUMN_NAME_BATERIA} TEXT," +
                 "${CarEntry.COLLUMN_NAME_POTENCIA} TEXT," +
