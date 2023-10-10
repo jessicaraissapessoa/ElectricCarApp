@@ -75,19 +75,125 @@ class CarRepository (private val context: Context) {
             null
         )
 
-        val itemCar = mutableListOf<Carro>()
+        var itemId : Long = 0
+        var preco = ""
+        var bateria = ""
+        var potencia = ""
+        var recarga = ""
+        var urlPhoto = ""
 
         with(cursor) {
             while (moveToNext()) {
-                val itemId = getLong(getColumnIndexOrThrow(BaseColumns._ID)) //Pegando o id do banco de dados gravado
+                itemId = getLong(getColumnIndexOrThrow(COLLUMN_NAME_CAR_ID)) //Pegando o id do banco de dados gravado
                 Log.d("ID -> ", itemId.toString())
 
-                val preco = getString(getColumnIndexOrThrow(COLLUMN_NAME_PRECO))
+                preco = getString(getColumnIndexOrThrow(COLLUMN_NAME_PRECO))
                 Log.d("preco -> ", preco)
+
+                bateria = getString(getColumnIndexOrThrow(COLLUMN_NAME_BATERIA))
+                Log.d("bateria -> ", bateria)
+
+                potencia = getString(getColumnIndexOrThrow(COLLUMN_NAME_POTENCIA))
+                Log.d("potencia -> ", potencia)
+
+                recarga = getString(getColumnIndexOrThrow(COLLUMN_NAME_RACARGA))
+                Log.d("recarga -> ", recarga)
+
+                urlPhoto = getString(getColumnIndexOrThrow(COLLUMN_NAME_URL_PHOTO))
+                Log.d("urlPhoto -> ", urlPhoto)
             }
         }
         //Depois de percorrer esse cursor, para não utilizar recursos de memória, vamos fechar ele:
         cursor.close()
 
+        return Carro(
+            id = itemId.toInt(),
+            preco = preco,
+            bateria = bateria,
+            potencia = potencia,
+            recarga = recarga,
+            urlPhoto = urlPhoto,
+            isFavorite = true
+        )
+    }
+
+    fun saveIfNotExist(carro: Carro) {
+
+        val car = findCarById(carro.id) //Acessando o banco de dados
+
+        //Vai verificar se car já está nesse banco de dados local do SQLite:
+        if (car.id == ID_WHEN_NO_CAR) { //Se não achar, salva
+            save(carro)
+        }
+    }
+
+    fun getAll() : List<Carro> {
+        val dbHelper = CarsDbHelper(context) //Instanciando e pegando o contexto
+        val db = dbHelper.readableDatabase
+
+        //Listagem das colunas a serem exibidas no resultado da Query:
+        val columns = arrayOf(
+            BaseColumns._ID,
+            COLLUMN_NAME_CAR_ID,
+            COLLUMN_NAME_PRECO,
+            COLLUMN_NAME_BATERIA,
+            COLLUMN_NAME_POTENCIA,
+            COLLUMN_NAME_RACARGA,
+            COLLUMN_NAME_URL_PHOTO
+        )
+
+        val cursor = db.query( //Faz um select de SQL
+            CarrosContract.CarEntry.TABLE_NAME, //Primeiro parâmetro é o nome da tabela
+            columns, //as colunas a serem exibidas
+            null,
+            null,
+            null,
+            null,
+            null
+        )
+
+        val carros = mutableListOf<Carro>()
+
+        with(cursor) {
+            while (moveToNext()) {
+                val itemId = getLong(getColumnIndexOrThrow(COLLUMN_NAME_CAR_ID)) //Pegando o id do banco de dados gravado
+                Log.d("ID -> ", itemId.toString())
+
+                val preco = getString(getColumnIndexOrThrow(COLLUMN_NAME_PRECO))
+                Log.d("preco -> ", preco)
+
+                val bateria = getString(getColumnIndexOrThrow(COLLUMN_NAME_BATERIA))
+                Log.d("bateria -> ", bateria)
+
+                val potencia = getString(getColumnIndexOrThrow(COLLUMN_NAME_POTENCIA))
+                Log.d("potencia -> ", potencia)
+
+                val recarga = getString(getColumnIndexOrThrow(COLLUMN_NAME_RACARGA))
+                Log.d("recarga -> ", recarga)
+
+                val urlPhoto = getString(getColumnIndexOrThrow(COLLUMN_NAME_URL_PHOTO))
+                Log.d("urlPhoto -> ", urlPhoto)
+
+                carros.add(
+                    Carro(
+                        id = itemId.toInt(),
+                        preco = preco,
+                        bateria = bateria,
+                        potencia = potencia,
+                        recarga = recarga,
+                        urlPhoto = urlPhoto,
+                        isFavorite = true
+                    )
+                )
+            }
+        }
+        //Depois de percorrer esse cursor, para não utilizar recursos de memória, vamos fechar ele:
+        cursor.close()
+
+        return carros
+    }
+
+    companion object {
+        const val ID_WHEN_NO_CAR = 0
     }
 }
