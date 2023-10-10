@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.eletriccarapp.R
 import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
 
-class CarAdapter(private val carros: List<Carro>) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class CarAdapter(private val carros: List<Carro>, private val isFavoriteScreen : Boolean = false) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
     var carItemLister : (Carro) -> Unit = {} //Com isso a gente consegue acessar ele lá no Fragment
 
@@ -26,10 +26,12 @@ class CarAdapter(private val carros: List<Carro>) : RecyclerView.Adapter<CarAdap
         holder.bateria.text = carros[position].bateria
         holder.potencia.text = carros[position].potencia
         holder.recarga.text = carros[position].recarga
+        if (isFavoriteScreen) {
+            holder.favorito.setImageResource(R.drawable.ic_star_selected)
+        }
         holder.favorito.setOnClickListener{
             val carro = carros[position]
             carItemLister(carro) //Passando o carro que a gente clicou
-            carro.isFavorite = !carro.isFavorite //Quando clica, se é false vira true, se é true vira false
 
             setupFavorite(carro, holder)
         }
@@ -39,6 +41,8 @@ class CarAdapter(private val carros: List<Carro>) : RecyclerView.Adapter<CarAdap
         carro: Carro,
         holder: ViewHolder
     ) {
+        carro.isFavorite = !carro.isFavorite //Quando clica, se é false vira true, se é true vira false
+
         if (carro.isFavorite) {
             holder.favorito.setImageResource(R.drawable.ic_star_selected)
         } else {
