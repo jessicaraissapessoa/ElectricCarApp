@@ -41,7 +41,7 @@ Repositório destinado ao aplicativo construído no módulo "Introdução ao Des
 <br>
 
 O repositório possui as duas versões do aplicativo:
-* A versão pré refatoração está na branch preRefactor
+* A versão pré refatoração está na branch preRefactor (https://github.com/jessicaraissapessoa/ElectricCarApp/tree/preRefactor)
 - A versão fatorada está na main
 
 <br>
