@@ -113,3 +113,7 @@ F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 @
 build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+~
+Napp/src/main/java/br/com/jessicaraissapessoa/electriccarapp/data/CarFactory.kt,3\c\3c151ce6a1b8d1cdd8f10d6e6807ec59b73710f7
+‡
+Wapp/src/main/java/br/com/jessicaraissapessoa/electriccarapp/data/local/CarRepository.kt,e\a\ea6590b6ab1d5cfa1b81942429a9ae947fe6c72e
