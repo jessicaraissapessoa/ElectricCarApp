@@ -22,7 +22,7 @@ import br.com.jessicaraissapessoa.electriccarapp.data.CarsApi
 import br.com.jessicaraissapessoa.electriccarapp.data.local.CarRepository
 import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.CarAdapter
-import br.com.jessicaraissapessoa.eletriccarapp.R
+import br.com.jessicaraissapessoa.electriccarapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONTokener

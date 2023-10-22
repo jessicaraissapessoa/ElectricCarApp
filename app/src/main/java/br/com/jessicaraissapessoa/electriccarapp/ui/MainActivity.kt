@@ -1,87 +1,24 @@
 package br.com.jessicaraissapessoa.electriccarapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
-import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.TabAdapter
-import br.com.jessicaraissapessoa.eletriccarapp.R
-import com.google.android.material.tabs.TabLayout
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+import br.com.jessicaraissapessoa.electriccarapp.R
+import br.com.jessicaraissapessoa.electriccarapp.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var tabLayout : TabLayout
-    lateinit var viewPager : ViewPager2
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("Lifecycle", "CREATE")
+        setContentView(binding.root)
 
-        setContentView(R.layout.activity_main)
+        val navController = findNavController(R.id.nav_host_fragment)
+        setupWithNavController(binding.bottomNavigation, navController)
 
-        setupView()
-        setupTabs()
     }
-
-    fun setupView() {
-        tabLayout = findViewById(R.id.tab_layout)
-        viewPager = findViewById(R.id.vp_view_pager)
-    }
-
-    fun setupTabs() {
-        val tabsAdapter = TabAdapter(this)
-        viewPager.adapter = tabsAdapter
-
-        //O que ele vai fazer quando clicado:
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
-            override fun onTabSelected(tab: TabLayout.Tab?) { //Quando ela for selecionada
-                tab?.let {//Se não for null
-                    viewPager.currentItem = it.position
-                }
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) { //Quando não for selecionada
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) { //Quando der um re-select nela
-
-            }
-        })
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                //Sobrescrita do método onPageSelected() garantindo que quando for para uma tab, a tab respectiva fique selecionada
-                //Faz funcionar corretamente transição entre fragments com scroll esquerda-direita
-                super.onPageSelected(position)
-                tabLayout.getTabAt(position)?.select()
-            }
-        })
-    }
-
-    //LOGS:
-    override fun onResume() {
-        super.onResume()
-        Log.d("LifeCycle", "RESUME")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("LifeCycle", "START")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("LifeCycle", "PAUSE")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("LifeCycle", "STOP")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("LifeCycle", "DESTROY")
-    }
-
 }

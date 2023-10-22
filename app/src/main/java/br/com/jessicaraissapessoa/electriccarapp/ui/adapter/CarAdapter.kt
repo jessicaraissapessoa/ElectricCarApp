@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
-import br.com.jessicaraissapessoa.eletriccarapp.R
+import br.com.jessicaraissapessoa.electriccarapp.R
 
 class CarAdapter(private val carros: List<Carro>, private val isFavoriteScreen : Boolean = false) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 

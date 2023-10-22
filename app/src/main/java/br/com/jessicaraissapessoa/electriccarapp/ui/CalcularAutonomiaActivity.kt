@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import br.com.jessicaraissapessoa.eletriccarapp.R
+import br.com.jessicaraissapessoa.electriccarapp.R
 
 class CalcularAutonomiaActivity : AppCompatActivity() {
 

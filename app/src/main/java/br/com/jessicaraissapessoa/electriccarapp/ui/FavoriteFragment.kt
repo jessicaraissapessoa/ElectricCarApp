@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.jessicaraissapessoa.electriccarapp.data.local.CarRepository
 import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.CarAdapter
-import br.com.jessicaraissapessoa.eletriccarapp.R
+import br.com.jessicaraissapessoa.electriccarapp.R
 
 class FavoriteFragment : Fragment() {
 
