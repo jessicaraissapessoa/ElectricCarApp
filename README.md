@@ -21,7 +21,7 @@ Repositório destinado ao aplicativo construído no módulo "Introdução ao Des
 <br>
 
 * Trata-se de uma aplicação relacionada à dados de carros elétricos
-- A aplicação é fictícia (dados fictícios) e tem por objetivo apenas à prática da construção de uma aplicação Android com Kotlin
+- A aplicação é fictícia (dados fictícios) e tem por objetivo apenas à prática da construção de uma aplicação Android com Kotlin e aplicação de Navigation Component
 * A aplicação possui a funcionalidade de calcular autonomia de um carro elétrico por meio do recebimento dos dados Preço Kwh/Km percorrido pelo usuário
 - A aplicação recebe dados de uma API simulada (arquivo JSON do Github) e possui a funcionalidade de favoritar carros dessa lista e exibí-los em uma aba à parte
 
@@ -32,6 +32,23 @@ Repositório destinado ao aplicativo construído no módulo "Introdução ao Des
 <br>
 
 * Implementação de método para remoção de carros da lista de Favoritos
+- Alteração para o tema Theme.MaterialComponents.Light.NoActionBar, para manter a visualização do aplicativo no light mode
+
+<br>
+
+## O repositório
+
+<br>
+
+O repositório possui as duas versões do aplicativo:
+* A versão pré refatoração está na branch preRefactor
+- A versão fatorada está na main
+
+<br>
+
+* Esse repositório possui uma estrutura de commits que, em geral (tirando alguns lapsos que incluem mudar nome das aulas mas esquecer de atualizar nome do módulo kkkk), dispõe as atualizações do código da aplicação aula à aula
+- Assim sendo, você pode consultar o código de alguma aula em específico
+* Para ver um momento específico da construção do app: [Relatório de commits do repositório da aplicação](https://github.com/jessicaraissapessoa/EletricCarApp/activity?ref=main)
 
 <br>
 
@@ -40,27 +57,17 @@ Repositório destinado ao aplicativo construído no módulo "Introdução ao Des
 <br>
 
 ### Tela inicial na aba Carros
-![TelaCarros.png](https://github.com/jessicaraissapessoa/EletricCarApp/assets/103599234/f941342d-2859-4589-8a27-c90a0dad6f3e)
+<img src="https://github.com/jessicaraissapessoa/ElectricCarApp/assets/103599234/2f24a3ab-f348-4185-b641-ad37ae72c013" width="300">
 
 <br>
 
 ### Tela inicial na aba Favoritos
-![TelaFavoritos](https://github.com/jessicaraissapessoa/EletricCarApp/assets/103599234/deb41da7-81ad-41db-ac65-acf1852dbc59)
+<img src="https://github.com/jessicaraissapessoa/ElectricCarApp/assets/103599234/13934df1-8519-49df-aa95-0ee508ae3b52" width="300">
 
 <br>
 
 ### Tela de calcular autonomia de carro elétrico
-![TelaCalcularAutonomia](https://github.com/jessicaraissapessoa/EletricCarApp/assets/103599234/0f85eba4-1cb1-4b24-88bd-08381e9029f3)
-
-<br>
-
-## Sobre o repositório
-
-<br>
-
-* Esse repositório possui uma estrutura de commits que, em geral (tirando alguns lapsos que incluem mudar nome das aulas mas esquecer de atualizar nome do módulo kkkk), dispõe as atualizações do código da aplicação aula à aula
-- Assim sendo, você pode consultar o código de alguma aula em específico
-* Para ver um momento específico da construção do app: [Relatório de commits do repositório da aplicação](https://github.com/jessicaraissapessoa/EletricCarApp/activity?ref=main)
+<img src="https://github.com/jessicaraissapessoa/ElectricCarApp/assets/103599234/9c5924d0-396c-4359-9e6d-37cd2bcc09f6" width="300">
 
 <br>
 
