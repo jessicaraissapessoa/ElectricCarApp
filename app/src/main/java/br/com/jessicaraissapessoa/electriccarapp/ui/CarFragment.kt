@@ -1,7 +1,6 @@
 package br.com.jessicaraissapessoa.electriccarapp.ui
 
 import android.content.Context
-import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.AsyncTask
@@ -18,12 +17,11 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import br.com.jessicaraissapessoa.electriccarapp.R
 import br.com.jessicaraissapessoa.electriccarapp.data.CarsApi
 import br.com.jessicaraissapessoa.electriccarapp.data.local.CarRepository
 import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.CarAdapter
-import br.com.jessicaraissapessoa.electriccarapp.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONTokener
 import retrofit2.Call
@@ -36,7 +34,6 @@ import java.net.URL
 
 class CarFragment : Fragment() {
 
-    lateinit var fabCalcular : FloatingActionButton
     lateinit var listaCarros : RecyclerView
     lateinit var progress : ProgressBar
     lateinit var noInternetImage : ImageView
@@ -57,7 +54,6 @@ class CarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRetrofit()
         setupView(view)
-        setupListeners()
     }
 
     override fun onResume() {
@@ -113,7 +109,6 @@ class CarFragment : Fragment() {
 
     fun setupView(view: View) {
         view.apply {
-            fabCalcular = findViewById(R.id.fab_calcular)
             listaCarros = findViewById(R.id.rv_lista_carros)
             progress = findViewById(R.id.pb_loader)
             noInternetImage = findViewById(R.id.iv_empty_state)
@@ -129,12 +124,6 @@ class CarFragment : Fragment() {
         }
         carroAdapter.carItemLister = {carro ->
             val isSaved = CarRepository(requireContext()).saveIfNotExist(carro)
-        }
-    }
-
-    fun setupListeners() {
-        fabCalcular.setOnClickListener {
-            startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
         }
     }
 

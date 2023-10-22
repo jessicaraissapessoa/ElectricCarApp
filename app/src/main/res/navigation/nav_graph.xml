@@ -10,4 +10,11 @@
         android:name="br.com.jessicaraissapessoa.electriccarapp.ui.CarFragment"
         android:label="CarFragment"
         tools:layout="@layout/car_fragment"/>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="br.com.jessicaraissapessoa.electriccarapp.ui.FavoriteFragment"
+        android:label="FavoriteFragment"
+        tools:layout="@layout/favorite_fragment"/>
+
 </navigation>
