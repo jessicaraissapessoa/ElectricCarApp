@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EletricCarApp</string>
+    <string name="app_name">ElectricCarApp</string>
     <string name="carros">Carros</string>
     <string name="title">Electric Car</string>
     <string name="favoritos">Favoritos</string>
