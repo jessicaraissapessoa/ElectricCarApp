@@ -1,6 +1,6 @@
 # ElectricCarApp
 
-Repositório destinado ao aplicativo construído no módulo "Introdução ao Desenvolvimento Mobile com Kotlin" e refatorado no módulo "Ganhando Produtividade com o Android Jetpack". do Santander Bootcamp - Mobile Android com Kotlin
+Repositório destinado ao aplicativo que está sendo construído no decorrer das aulas de Android do Santander Bootcamp - Mobile Android com Kotlin
 
 <br>
 
@@ -8,11 +8,11 @@ Repositório destinado ao aplicativo construído no módulo "Introdução ao Des
 
 <br>
 
-* Android Studio
-* Kotlin
-* Android Jetpack > Navigation
-* SQLite
-* "API" https://github.com/digitalinnovationone/cars-api/blob/main/cars.json
+* **Linguagem:** Kotlin
+* **Versionamento:** Git/GitHub
+* **IDE:** Android Studio
+* **Banco de dados:** SQLite
+* **"API"**: https://github.com/digitalinnovationone/cars-api/blob/main/cars.json
 
 <br>
 
