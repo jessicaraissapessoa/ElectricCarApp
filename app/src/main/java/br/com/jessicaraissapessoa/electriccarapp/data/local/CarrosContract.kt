@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.data.local
+package br.com.jessicaraissapessoa.electriccarapp.data.local
 
 import android.provider.BaseColumns
 

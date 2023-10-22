@@ -1,10 +1,10 @@
-package br.com.jessicaraissapessoa.eletriccarapp.data.local
+package br.com.jessicaraissapessoa.electriccarapp.data.local
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.SQL_DELETE_ENTRIES
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.TABLE_CAR
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.SQL_DELETE_ENTRIES
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.TABLE_CAR
 
 class CarsDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 

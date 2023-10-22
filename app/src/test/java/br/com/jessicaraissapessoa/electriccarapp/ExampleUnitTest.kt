@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp
+package br.com.jessicaraissapessoa.electriccarapp
 
 import org.junit.Test
 

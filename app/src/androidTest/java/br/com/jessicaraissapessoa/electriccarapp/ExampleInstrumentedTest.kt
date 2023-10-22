@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp
+package br.com.jessicaraissapessoa.electriccarapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

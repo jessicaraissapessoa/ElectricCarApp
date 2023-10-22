@@ -1,16 +1,16 @@
-package br.com.jessicaraissapessoa.eletriccarapp.data.local
+package br.com.jessicaraissapessoa.electriccarapp.data.local
 
 import android.content.ContentValues
 import android.content.Context
 import android.provider.BaseColumns
 import android.util.Log
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_BATERIA
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_CAR_ID
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_POTENCIA
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_PRECO
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_RACARGA
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_URL_PHOTO
-import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_BATERIA
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_CAR_ID
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_POTENCIA
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_PRECO
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_RACARGA
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarrosContract.CarEntry.COLLUMN_NAME_URL_PHOTO
+import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
 
 class CarRepository (private val context: Context) {
 

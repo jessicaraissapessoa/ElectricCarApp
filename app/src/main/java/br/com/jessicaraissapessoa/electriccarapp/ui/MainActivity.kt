@@ -1,11 +1,11 @@
-package br.com.jessicaraissapessoa.eletriccarapp.ui
+package br.com.jessicaraissapessoa.electriccarapp.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.TabAdapter
 import br.com.jessicaraissapessoa.eletriccarapp.R
-import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.TabAdapter
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {

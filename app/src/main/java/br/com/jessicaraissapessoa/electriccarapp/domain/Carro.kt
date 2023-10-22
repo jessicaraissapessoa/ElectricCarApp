@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.domain
+package br.com.jessicaraissapessoa.electriccarapp.domain
 
 data class Carro (
     val id: Int,

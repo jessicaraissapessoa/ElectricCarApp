@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.ui.adapter
+package br.com.jessicaraissapessoa.electriccarapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
 import br.com.jessicaraissapessoa.eletriccarapp.R
-import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
 
 class CarAdapter(private val carros: List<Carro>, private val isFavoriteScreen : Boolean = false) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 

@@ -1,10 +1,10 @@
-package br.com.jessicaraissapessoa.eletriccarapp.ui.adapter
+package br.com.jessicaraissapessoa.electriccarapp.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import br.com.jessicaraissapessoa.eletriccarapp.ui.CarFragment
-import br.com.jessicaraissapessoa.eletriccarapp.ui.FavoriteFragment
+import br.com.jessicaraissapessoa.electriccarapp.ui.CarFragment
+import br.com.jessicaraissapessoa.electriccarapp.ui.FavoriteFragment
 
 class TabAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 

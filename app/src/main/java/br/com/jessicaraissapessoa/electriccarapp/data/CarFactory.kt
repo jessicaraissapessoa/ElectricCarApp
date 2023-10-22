@@ -1,6 +1,6 @@
-package br.com.jessicaraissapessoa.eletriccarapp.data
+package br.com.jessicaraissapessoa.electriccarapp.data
 
-import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
+import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
 
 object CarFactory {
 

@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.ui
+package br.com.jessicaraissapessoa.electriccarapp.ui
 
 import android.content.Context
 import android.content.Intent
@@ -18,11 +18,11 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import br.com.jessicaraissapessoa.electriccarapp.data.CarsApi
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarRepository
+import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
+import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.CarAdapter
 import br.com.jessicaraissapessoa.eletriccarapp.R
-import br.com.jessicaraissapessoa.eletriccarapp.data.CarsApi
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarRepository
-import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
-import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONTokener

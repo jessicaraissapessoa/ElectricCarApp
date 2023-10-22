@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.ui
+package br.com.jessicaraissapessoa.electriccarapp.ui
 
 import android.content.Context
 import android.os.Bundle

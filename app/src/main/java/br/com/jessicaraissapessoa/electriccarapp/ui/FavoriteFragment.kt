@@ -1,4 +1,4 @@
-package br.com.jessicaraissapessoa.eletriccarapp.ui
+package br.com.jessicaraissapessoa.electriccarapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import br.com.jessicaraissapessoa.electriccarapp.data.local.CarRepository
+import br.com.jessicaraissapessoa.electriccarapp.domain.Carro
+import br.com.jessicaraissapessoa.electriccarapp.ui.adapter.CarAdapter
 import br.com.jessicaraissapessoa.eletriccarapp.R
-import br.com.jessicaraissapessoa.eletriccarapp.data.local.CarRepository
-import br.com.jessicaraissapessoa.eletriccarapp.domain.Carro
-import br.com.jessicaraissapessoa.eletriccarapp.ui.adapter.CarAdapter
 
 class FavoriteFragment : Fragment() {
 
